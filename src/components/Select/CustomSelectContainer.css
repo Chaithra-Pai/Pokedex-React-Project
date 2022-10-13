@@ -1,0 +1,13 @@
+.filterButtonDesktop{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 5%;
+
+}
+
+
+@media only screen and (max-width: 768px){
+    .filterButtonDesktop{
+      display: none;
+    }
+}

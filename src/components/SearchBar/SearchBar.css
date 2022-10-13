@@ -1,7 +1,3 @@
-.search{
-    padding: 0 45px;
-}
-  
 .searchLabel{
     font-family: 'Roboto';
     color: #5d5f7e;
@@ -39,10 +35,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .search{
-        padding: 0 15px;
-    }
-
     .searchLabel{
         display: none;
     }
