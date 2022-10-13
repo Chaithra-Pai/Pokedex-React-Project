@@ -1,0 +1,49 @@
+.filterDesktop{
+    display: none;
+}
+
+.selectLabel{
+    font-family: 'Roboto';
+    color: #5d5f7e;
+    padding-bottom: 10px;
+}
+
+.selectDropdown{
+    display: flex;
+}
+
+.dropdownLabel{
+    display: grid;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background-color: #cddce1;
+    color: #000;
+    width: 30%;
+    height: 48px;
+    padding: 0 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.downArrowIcon {
+    background-color: #cddce1;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    display: grid;
+    height: 48px;
+    padding: 0 15px;
+    place-items: center;
+    width: 50px;
+}
+
+.icon{
+    background-color: #cddce1;
+}
+
+@media only screen and (min-width: 768px){
+    .filterDesktop{
+      display: grid;
+    }
+}
+
