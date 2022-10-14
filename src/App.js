@@ -9,8 +9,8 @@ function App() {
 
   useEffect( () => {
     dispatch(fetchPokemonListApiCall())
-  })
-  
+  }, [])
+
   return (
     <div className="App">
       <HomeScreen />

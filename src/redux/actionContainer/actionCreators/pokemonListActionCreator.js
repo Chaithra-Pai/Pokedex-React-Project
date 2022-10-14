@@ -28,7 +28,7 @@ export const fetchPokemonListFailure = (error) => {
 
 export const fetchPokemonListApiCall = () => {
     return (dispatch) => {
-        dispatch(fetchPokemons);
+        dispatch(fetchPokemons());
         axios
             .get(Services.pokemonListAPI)
             .then ((response) => dispatch(fetchPokemonListSuccess(response.data)))
