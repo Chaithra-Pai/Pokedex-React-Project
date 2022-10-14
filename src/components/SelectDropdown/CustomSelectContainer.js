@@ -1,7 +1,7 @@
 import React from 'react'
-import SelectCustom from './SelectCustom'
+import SelectCustom from './SelectDropdown'
 import colourOptions from '../../sampleData.js'
-import './CustomSelectContainer.css'
+import './customSelectContainer.css'
 
 const CustomSelectContainer = () => {
   return (

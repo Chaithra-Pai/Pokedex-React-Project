@@ -1,6 +1,6 @@
 import React from 'react'
 import { ReactComponent as SearchIcon  } from '../../assets/icons/search_icon.svg'
-import './SearchBar.css'
+import './searchBar.css'
 
 const SearchBar = () => {
   return (

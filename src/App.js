@@ -1,19 +1,19 @@
 import './App.css';
-import Header from './components/Header/Header';
-import SearchBar from './components/SearchBar/SearchBar';
-import Button from './components/Button/Button';
-import SelectCustom from './components/Select/SelectCustom';
-import CustomSelectContainer from './components/Select/CustomSelectContainer';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchPokemonListApiCall } from './redux/actionContainer/actionCreators/pokemonListActionCreator';
+import HomeScreen from './Screens/HomeScreen';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect( () => {
+    dispatch(fetchPokemonListApiCall())
+  })
+  
   return (
     <div className="App">
-      <Header/>
-        <div className='searchFilter'>
-          <SearchBar />
-          <CustomSelectContainer />
-          <Button/>
-        </div>  
+      <HomeScreen />
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { ReactComponent as ArrowIcon  } from '../../assets/icons/downArrow_icon.svg'
-import './SelectCustom.css'
+import './selectDropdown.css'
 
-const SelectCustom = (props) => {
+const SelectDropdown = (props) => {
     const options = props.options
     const [expanded,setExpanded] = useState(false);
 
@@ -13,7 +13,9 @@ const SelectCustom = (props) => {
     return (
         <div className='selectContainer'>
             <div className='selectLabel'><p>{props.label}</p></div>
-            <div style={customStyle} className='selectDropdownContainer'
+            <div 
+                style={customStyle} className='selectDropdownContainer'
+                onClick={() => setExpanded( !expanded )}
             >
                 <div className='customSelectLabel' style={customStyle}>
                     <div className='containerLabel' style={customStyle}>Normal</div>
@@ -48,4 +50,4 @@ const SelectCustom = (props) => {
     )
 }
 
-export default SelectCustom
+export default SelectDropdown

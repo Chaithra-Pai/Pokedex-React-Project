@@ -1,8 +1,8 @@
 import React from 'react'
 import { ReactComponent as FilterIcon  } from '../../assets/icons/filter_icon.svg'
-import './Button.css'
+import './filterButton.css'
 
-const Button = () => {
+const FilterButton = () => {
   return (
     <button type="button" className='filterButtonMobile'>
       <FilterIcon />
@@ -10,4 +10,4 @@ const Button = () => {
   )
 }
 
-export default Button
+export default FilterButton
