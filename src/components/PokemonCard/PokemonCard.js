@@ -2,6 +2,7 @@ import './pokemonCard.css'
 import React, { useEffect, useState } from 'react'
 import { LoadingIndicators } from '../../constants/constants'
 import axios from 'axios';
+import { calculateColorCode } from '../../utilities/calculateColorCode';
 
 const PokemonCard = (props) => {
   
@@ -23,9 +24,15 @@ const PokemonCard = (props) => {
 
   const imageUrl = pokemonDetails?.sprites?.other?.dream_world?.front_default;
   const pokemonId = String(pokemonDetails?.id).padStart(3,'0');
+  const type = pokemonDetails.types
+
+  const backgroundStyle = {
+    backgroundColor: type?.length === 1  && calculateColorCode(type),
+    backgroundImage: type?.length > 1 ? calculateColorCode(type) : null
+  }
 
   return (
-    <div className='pokemonCard'>
+    <div className='pokemonCard' style={backgroundStyle}>
       <img className='pokemonImg' alt='Pokemon' src={imageUrl} />
       <p className='pokemonLabel'>{name}</p>
       <p className='pokemonId'>{pokemonId}</p>

@@ -5,13 +5,13 @@ import './customSelectContainer.css'
 
 const CustomSelectContainer = () => {
   return (
-    // <div style='position: relative'>
-    <div className='filterButtonDesktop'>
+    <div style={{position: 'relative'}}>
+      <div className='filterButtonDesktop'>
         <SelectCustom options={colourOptions} label='Type'/>  
         <SelectCustom options={colourOptions} label='Gender'/> 
         <SelectCustom options={colourOptions} label='Stat'/> 
+      </div>
     </div>
-    // </div>
   )
 }
 

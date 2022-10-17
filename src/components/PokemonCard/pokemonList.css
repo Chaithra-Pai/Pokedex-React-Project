@@ -5,5 +5,16 @@
     margin-top: 3%;
     overflow-x: hidden;
     overflow-y: scroll;
-    padding: 0 45px 30px;
+    padding: 0 45px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.pokemonList::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.pokemonList {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

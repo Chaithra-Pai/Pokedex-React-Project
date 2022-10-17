@@ -8,7 +8,7 @@ import PokemonList from '../components/PokemonCard/PokemonList'
 
 const HomeScreen = () => {
   return (
-    <div>
+    <div className='homeScreen'>
         <Header/>
         <div className='searchFilter'>
           <SearchBar />

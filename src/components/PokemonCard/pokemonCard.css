@@ -7,7 +7,6 @@
     height: 250px;
     border: 1px dashed #5d5f7e;
     border-radius: 3px;
-    background-image: linear-gradient(rgb(237, 194, 196), rgb(178, 210, 232));
 }
 
 .pokemonImg{
@@ -25,6 +24,7 @@
     font-weight: bold;
     font-size: 20px;
     line-height: 23px;
+    padding-top: 8px;
     text-align: center;
     text-transform: capitalize;
 }

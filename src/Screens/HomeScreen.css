@@ -1,6 +1,10 @@
 .App {
     text-align: center;
   }
+
+.homeScreen{
+    background-color: #e1eced;
+}
   
   .searchFilter{
     display: grid;
