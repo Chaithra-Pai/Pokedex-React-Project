@@ -5,7 +5,7 @@ import './customSelectContainer.css'
 
 const CustomSelectContainer = () => {
   return (
-    <div style={{position: 'relative'}}>
+    <div className='div-filter'>
       <div className='filterButtonDesktop'>
         <SelectCustom options={colourOptions} label='Type'/>  
         <SelectCustom options={colourOptions} label='Gender'/> 

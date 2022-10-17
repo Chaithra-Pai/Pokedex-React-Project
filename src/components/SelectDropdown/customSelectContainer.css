@@ -8,9 +8,16 @@
     z-index: 2;
 }
 
+.div-filter{
+  position: relative;
+}
 
 @media only screen and (max-width: 768px){
     .filterButtonDesktop{
+      display: none;
+    }
+
+    .div-filter{
       display: none;
     }
 }

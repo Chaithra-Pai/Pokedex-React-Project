@@ -30,9 +30,5 @@
 }
 
 
-@media only screen and (max-width: 800px) and (min-width: 500px){
-    .pokemonList {
-        grid-template-columns: repeat(3,1fr);
-    }
-}
+
 

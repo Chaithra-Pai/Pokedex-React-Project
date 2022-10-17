@@ -8,6 +8,18 @@
     padding: 0 45px;
 }
 
+@media only screen and (max-width: 768px){
+  .pokemonList {
+      padding: 0 25px;
+  }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 500px){
+  .pokemonList {
+      grid-template-columns: repeat(3,1fr);
+  }
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .pokemonList::-webkit-scrollbar {
     display: none;
