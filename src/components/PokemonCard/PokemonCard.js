@@ -1,40 +1,35 @@
 import './pokemonCard.css'
-import React, { useState } from 'react'
-import Squirtle from './squirtle.png'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
 import { LoadingIndicators } from '../../constants/constants'
-import { getPokemonListObject } from '../../redux/selector/pokemonListSelector'
 import axios from 'axios';
 
-const PokemonCard = () => {
+const PokemonCard = (props) => {
+  
+  const { name, id, types, sprites } = props?.pokemon;
+  const [ pokemonDetails, setPokemonDetails ] = useState({})
 
-  const { loading, pokemonListResponse, pokemonListError } = useSelector(getPokemonListObject)
-  const pokemonListResult = pokemonListResponse.results;
-  // console.log(pokemonListResponse.results);
+  useEffect( () => {
+    if(props?.pokemonUrl){
+      axios
+        .get(props?.pokemonUrl)
+        .then((details) => {
+          setPokemonDetails(details?.data)
+        })
+        .catch((error) => {
+          setPokemonDetails({})
+        })
+    }
+  }, [props?.pokemonUrl])
+
+  const imageUrl = pokemonDetails?.sprites?.other?.dream_world?.front_default;
+  const pokemonId = String(pokemonDetails?.id).padStart(3,'0');
 
   return (
-    <div className='pokemonList'>
-      { 
-         pokemonListResult?.map((pokemon,index) => {
-          let url = pokemon.url
-          let id = axios
-          .get(url)
-          .then((response) => {
-              let pokemonId = response.data.id
-              return pokemonId
-          })
-          .catch((error) => console.log(error))
-          
-          return (  
-          <div className='pokemonCard' key={index}>
-              <img className='pokemonImg' alt='Pokemon' src={Squirtle} />
-              <p className='pokemonLabel'>{ pokemon.name }</p>
-              <p className='pokemonId'>001</p>
-          </div>
-         )
-        })
-      }
-    </div> 
+    <div className='pokemonCard'>
+      <img className='pokemonImg' alt='Pokemon' src={imageUrl} />
+      <p className='pokemonLabel'>{name}</p>
+      <p className='pokemonId'>{pokemonId}</p>
+    </div>     
   )
 }
 

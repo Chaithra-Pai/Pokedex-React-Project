@@ -4,7 +4,7 @@ import Header from '../components/Header/Header'
 import SearchBar from '../components/SearchBar/SearchBar'
 import CustomSelectContainer from '../components/SelectDropdown/CustomSelectContainer'
 import FilterButton from '../components/FilterButton/FilterButton'
-import PokemonCard from '../components/PokemonCard/PokemonCard'
+import PokemonList from '../components/PokemonCard/PokemonList'
 
 const HomeScreen = () => {
   return (
@@ -15,7 +15,7 @@ const HomeScreen = () => {
           <CustomSelectContainer />
           <FilterButton/>
         </div>  
-        <PokemonCard />
+        <PokemonList />
     </div>
   )
 }
