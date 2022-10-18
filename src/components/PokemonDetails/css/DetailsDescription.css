@@ -1,0 +1,32 @@
+p{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    /* truncate to 4 lines */
+    -webkit-line-clamp: 8;
+    text-align: justify;
+    font-family: 'Roboto';
+    line-height: 20px;
+    color: #2e3156;
+    padding-top: 5px;
+}
+
+.readMoreText{
+    background: none;
+    padding: 0;
+    font-family: 'Roboto';
+    font-size: 15px;
+    text-decoration: underline;
+    color: #2e3156;
+}
+
+.detailsDescription{
+    padding-top: 10px;
+}
+
+@media only screen and (max-width: 768px){
+    p {
+        -webkit-line-clamp: 11;
+        font-size: 15px;
+    }
+}
