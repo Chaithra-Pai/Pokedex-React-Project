@@ -1,12 +1,13 @@
 import React from 'react'
 import './header.css'
+import { ConstantText } from '../../constants/constants'
 
 const Header = () => {
   return (
         <div className='div-header'>
-            <h1 className='heading'>Pokèdex</h1>
+            <h1 className='heading'>{ConstantText.Heading}</h1>
             <div className='headingLine'></div>
-            <p className='subHeading'>Search for any pokemon that exists on the planet</p>          
+            <p className='subHeading'>{ConstantText.SubHeading}</p>          
         </div>
   )
 }

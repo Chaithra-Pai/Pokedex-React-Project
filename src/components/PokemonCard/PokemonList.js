@@ -8,6 +8,8 @@ import PokemonCard from './PokemonCard'
 const PokemonList = () => {
     const { loading, pokemonListResponse, pokemonListError } = useSelector(getPokemonListObject)
     const pokemonListResult = pokemonListResponse?.results;
+    const [displayData, setDisplayData] = useState(pokemonListResult);
+    //console.log(pokemonListResponse);
 
     return (
         <div className='pokemonList'>

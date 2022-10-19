@@ -23,7 +23,7 @@ const CustomModal = (props) => {
             aria-describedby="modal-modal-description"
             sx={style}
         >
-          <PokemonDetails handleClose={handleClose}/>
+          <PokemonDetails handleClose={handleClose} id={open}/>
         </Modal>
     </div>
   )

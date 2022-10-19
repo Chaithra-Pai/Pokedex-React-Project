@@ -67,4 +67,7 @@
 	.desktopHeading {
 		display: none;
 	}
+	.headerTitle, .headerId{
+		font-size: 27px;
+	}
 }

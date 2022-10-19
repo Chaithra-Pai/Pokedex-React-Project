@@ -38,3 +38,20 @@ export const Pokemon_Color_Codes = {
 	UNKNOWN: '#C0DFDD',
 	SHADOW: '#CACACA',
 };
+
+export const ConstantText = {
+	Heading: 'Pokédex',
+	SubHeading: 'Search for any pokemon that exists on the planet',
+	SearchPlaceHolder: 'Name or Number',
+	FilterName1: 'Search by',
+	Apply: 'Apply',
+	Reset: 'Reset',
+	Height: 'Height',
+	Weight: 'Weight',
+	Weight_Measure: 'Kg',
+	Gender: 'Gender(s)',
+	Egg_Groups: 'Egg Groups',
+	Abilities: 'Abilities',
+	Types: 'Types',
+	Weak_Against: 'Weak Against'
+};

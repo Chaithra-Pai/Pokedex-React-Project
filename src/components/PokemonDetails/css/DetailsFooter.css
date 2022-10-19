@@ -1,0 +1,31 @@
+.bottomContainer{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-items: flex-start;
+    width: 100%;
+    row-gap: 25%;
+    margin-top: 7%;
+    font-family: 'Roboto';
+    font-size: 18px;
+    color: #2e3156;
+}
+
+.individualGrid{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.gridRow{
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+}
+
+@media only screen and (max-width: 768px) {
+	.bottomContainer {
+        grid-template-columns: repeat(2,1fr);
+        row-gap: 12%;
+	}
+}

@@ -1,0 +1,13 @@
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto';
+    width: 80px;
+    height: 24px;
+    border: 1px solid #2e3156;
+    border-radius: 3%;
+    text-transform: uppercase;
+    margin: 5px 5px 5px 0;
+    color: #000;
+}
