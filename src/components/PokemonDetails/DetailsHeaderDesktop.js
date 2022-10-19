@@ -2,15 +2,15 @@ import React from 'react'
 import { ReactComponent as CloseIcon  } from '../../assets/icons/close_icon.svg'
 import './css/DetailsHeader.css'
 
-const DetailsHeaderDesktop = ({ handleClose }) => {
+const DetailsHeaderDesktop = ({ name, id, handleClose }) => {
   return (
     <>
     <div className='desktopHeading'>
         <div className='detailsHeader'>
-            <h2 className='headerTitle'>BULBASAUR</h2>
+            <h2 className='headerTitle'>{ name }</h2>
             <div className='idContainer'>
                 <div className='verticalLine'></div>
-                <div className='headerId'>001</div>
+                <div className='headerId'>{ id }</div>
                 <div className='verticalLine'></div>
             </div>
             <div>

@@ -27,7 +27,7 @@ const PokemonCard = (props) => {
 
   const imageUrl = pokemonDetails?.sprites?.other?.dream_world?.front_default;
   const pokemonId = String(pokemonDetails?.id).padStart(3,'0');
-  const type = pokemonDetails.types
+  const type = pokemonDetails?.types
 
   const backgroundStyle = {
     backgroundColor: type?.length === 1  && calculateColorCode(type),
@@ -41,11 +41,10 @@ const PokemonCard = (props) => {
       onClick={(event) => {
 				  if(!open) setOpen(event.target.id);
 			  }}
-      id={pokemonId}>
-          <img className='pokemonImg' alt='Pokemon' src={imageUrl} id={pokemonId}/>
-          <p className='pokemonLabel' id={pokemonId}>{name}</p>
-          <p className='pokemonId' id={pokemonId}>{pokemonId}</p>
-          {/* {console.log(open)} */}
+      id={pokemonDetails?.id}>
+          <img className='pokemonImg' alt='Pokemon' src={imageUrl} id={pokemonDetails?.id}/>
+          <p className='pokemonLabel' id={pokemonDetails?.id}>{name}</p>
+          <p className='pokemonId' id={pokemonDetails?.id}>{pokemonId}</p>
           <Modal open={open} setOpen={setOpen}/>
     </div>     
   )

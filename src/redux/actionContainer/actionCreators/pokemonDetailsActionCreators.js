@@ -36,10 +36,10 @@ export const fetchPokemonDescription = () => {
     }
 }
 
-export const fetchPokemonDescriptionSuccess = (pokemonData) => {
+export const fetchPokemonDescriptionSuccess = (pokemonDescription) => {
     return {
         type: FETCH_POKEMON_DESCRIPTION_SUCCESS,
-        payload: pokemonData
+        payload: pokemonDescription
     }
 }
 

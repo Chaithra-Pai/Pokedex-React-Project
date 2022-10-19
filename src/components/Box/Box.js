@@ -1,9 +1,9 @@
 import React from 'react'
 import './Box.css'
 
-const Box = ({ content , style }) => {
+const Box = ({ content , backgroundColor }) => {
   return (
-    <div className='box' style={style}>
+    <div className='box' style={{backgroundColor: backgroundColor}}>
         { content }
     </div>
   )

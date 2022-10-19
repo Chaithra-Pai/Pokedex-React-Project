@@ -1,12 +1,15 @@
 import React from 'react'
-import Squirtle from './squirtle.png'
 
-const PokemonDetailsImgCard = () => {
+const PokemonDetailsImgCard = ( {url, backgroundColor, id} ) => {
   return (
     <div 
+        style={{
+            backgroundImage: backgroundColor,
+            backgroundColor: backgroundColor
+        }}
         className='pokemonCard2' 
     >
-        <img className='pokemonImg' src={Squirtle} alt='Pokemon' id='001' />        
+        <img className='pokemonImg' src={url} alt='Pokemon' id={id} />        
     </div>
   )
 }

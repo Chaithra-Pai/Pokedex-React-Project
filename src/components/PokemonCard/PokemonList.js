@@ -11,14 +11,17 @@ const PokemonList = () => {
     const [displayData, setDisplayData] = useState(pokemonListResult);
     //console.log(pokemonListResponse);
 
+    useEffect(()=>{
+        setDisplayData(pokemonListResult)
+    },[pokemonListResponse])
+
     return (
         <div className='pokemonList'>
             {
-                pokemonListResult && 
-                    pokemonListResult?.map((pokemon, index) => {
-                        
+                displayData && 
+                    displayData?.map((pokemon) => {
                         return (
-                            <PokemonCard pokemon={pokemon} pokemonUrl={pokemon?.url} key={index} />
+                            <PokemonCard pokemon={pokemon} pokemonUrl={pokemon?.url} key={pokemon?.name} />
                         )
                 })
             }
