@@ -15,13 +15,16 @@ import {
   fetchPokemonDescriptionApiCall,
   clearPokemonDetails
 } from '../../redux/actionContainer/actionCreators/pokemonDetailsActionCreators'
+import { getGenderDataObject } from '../../redux/selector/genderDataSelector'
+import { FormatPokemonDetails } from '../../utilities/formatData'
 
 
 const PokemonDetails = ({ handleClose, id }) => {
   const dispatch = useDispatch();
   const { pokemonDetailsResponse, pokemonDescription } =useSelector(getPokemonDetailsObject)
+  const { genderMasterData } = useSelector(getGenderDataObject);
   const [pokemonDetails,setPokemonDetails] = useState([])
-  // console.log(pokemonDetails.types);
+  console.log(genderMasterData);
 
   useEffect(() => {
     dispatch(fetchPokemonDetailsApiCall(id))
@@ -41,6 +44,8 @@ const PokemonDetails = ({ handleClose, id }) => {
   const types = pokemonDetails?.types;
   const url = pokemonDetails?.sprites?.other?.dream_world?.front_default || '';
   // console.log(types.length);
+  // const { genderData } = FormatPokemonDetails(genderMasterData, pokemonDetails?.name)
+  // console.log(genderData);
 
   return (
     <div className='pokemonDetailsContainer'>
@@ -49,10 +54,12 @@ const PokemonDetails = ({ handleClose, id }) => {
             <PokemonDetailsImgCard url={url} backgroundColor={calculateColorCode(pokemonDetails?.types || [])} id={pokemonId}/>
             <div>
                 <DetailsHeaderDesktop name={pokemonDetails?.name} id={pokemonId} handleClose={handleClose}/>
-                <DetailsDescription pokemonDescription={pokemonDescription}/>
+                <DetailsDescription pokemonDescription={pokemonDescription} id={id}/>
             </div>
         </div> 
         <DetailsFooter height={height} weight={weight} egg_groups={egg_groups} abilities={abilities} types={types}/>
+        {/* <DetailsFooter height={height} weight={weight} egg_groups={egg_groups} abilities={abilities} types={types} genderData={genderData}/> */}
+
     </div>
   )
 }

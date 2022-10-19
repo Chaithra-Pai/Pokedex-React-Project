@@ -55,3 +55,5 @@ export const ConstantText = {
 	Types: 'Types',
 	Weak_Against: 'Weak Against'
 };
+
+export const GenderList = ['female', 'male', 'genderless'];

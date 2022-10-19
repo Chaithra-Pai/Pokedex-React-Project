@@ -24,7 +24,13 @@ const DetailsFooter = (props) => {
         <div className='individualGrid'>
 			<strong className="gridTitle">{ConstantText.Gender}</strong>
             <div className='gridRow'>
-    			<p className="gridValue">Female, Male</p>
+				{/* {
+					props.genderData?.map((item, index) =>{
+						return(
+							<p className="gridValue"  key={item}>{ (index ? ', ' : '') + item }</p>
+						)
+					})
+				} */}
             </div>
 		</div>
 

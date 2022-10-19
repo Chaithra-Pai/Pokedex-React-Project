@@ -1,7 +1,8 @@
 import React from 'react'
+import ChildModal from '../Modal/ChildModal'
 import './css/DetailsDescription.css'
 
-const DetailsDescription = ({ pokemonDescription }) => {
+const DetailsDescription = ({ pokemonDescription, id }) => {
 
     let description = pokemonDescription?.flavor_text_entries?.reduce((descriptionArr, currentVal) => {
         if( currentVal?.language?.name === 'en' ){
@@ -17,7 +18,7 @@ const DetailsDescription = ({ pokemonDescription }) => {
         <p>
             { description }
         </p>
-        <button className='readMoreText'>Read more...</button>
+        <ChildModal id={id} description={description}/>
     </div>
   )
 }

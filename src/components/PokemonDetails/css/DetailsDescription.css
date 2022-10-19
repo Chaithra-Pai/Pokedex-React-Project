@@ -11,15 +11,6 @@ p{
     padding-top: 5px;
 }
 
-.readMoreText{
-    background: none;
-    padding: 0;
-    font-family: 'Roboto';
-    font-size: 15px;
-    text-decoration: underline;
-    color: #2e3156;
-}
-
 .detailsDescription{
     padding-top: 10px;
 }
