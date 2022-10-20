@@ -22,9 +22,8 @@ import { FormatPokemonDetails } from '../../utilities/formatData'
 const PokemonDetails = ({ handleClose, id }) => {
   const dispatch = useDispatch();
   const { pokemonDetailsResponse, pokemonDescription } =useSelector(getPokemonDetailsObject)
-  const { genderMasterData } = useSelector(getGenderDataObject);
+  const { genderData } = useSelector(getGenderDataObject);
   const [pokemonDetails,setPokemonDetails] = useState([])
-  console.log(genderMasterData);
 
   useEffect(() => {
     dispatch(fetchPokemonDetailsApiCall(id))
@@ -43,9 +42,7 @@ const PokemonDetails = ({ handleClose, id }) => {
   const abilities = pokemonDetails?.abilities;
   const types = pokemonDetails?.types;
   const url = pokemonDetails?.sprites?.other?.dream_world?.front_default || '';
-  // console.log(types.length);
-  // const { genderData } = FormatPokemonDetails(genderMasterData, pokemonDetails?.name)
-  // console.log(genderData);
+  const { genderDataArray } = FormatPokemonDetails(genderData, pokemonDetails?.name)
 
   return (
     <div className='pokemonDetailsContainer'>
@@ -57,8 +54,7 @@ const PokemonDetails = ({ handleClose, id }) => {
                 <DetailsDescription pokemonDescription={pokemonDescription} id={id}/>
             </div>
         </div> 
-        <DetailsFooter height={height} weight={weight} egg_groups={egg_groups} abilities={abilities} types={types}/>
-        {/* <DetailsFooter height={height} weight={weight} egg_groups={egg_groups} abilities={abilities} types={types} genderData={genderData}/> */}
+        <DetailsFooter height={height} weight={weight} egg_groups={egg_groups} abilities={abilities} types={types} genderDataArray={genderDataArray}/>
 
     </div>
   )

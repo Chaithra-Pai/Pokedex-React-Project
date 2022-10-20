@@ -38,11 +38,9 @@ export const fetchGenderDataApiCall = () => {
 					genderTypes = [...genderTypes, item.name];
 					apiPromise = [...apiPromise, axios.get(item.url)];
 				});
-                console.log(genderTypes);
 
                 Promise.all([...apiPromise])
                         .then((promiseResponse) =>{
-                            console.log(promiseResponse[0]?.data);
                             dispatch(fetchGenderMasterDataSuccess([
                                 promiseResponse[0]?.data,
                                 promiseResponse[1]?.data,

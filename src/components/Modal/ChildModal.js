@@ -3,7 +3,6 @@ import React from 'react'
 
 function ChildModal( { id, description }) {
     const [open, setOpen] = React.useState(false);
-    const handleOpen = () => { setOpen(true); };
     const handleClose = () => { setOpen(false); };
 
     const readTextStyle = {

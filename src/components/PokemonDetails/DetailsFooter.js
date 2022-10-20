@@ -24,13 +24,13 @@ const DetailsFooter = (props) => {
         <div className='individualGrid'>
 			<strong className="gridTitle">{ConstantText.Gender}</strong>
             <div className='gridRow'>
-				{/* {
-					props.genderData?.map((item, index) =>{
+				{
+					props.genderDataArray?.map((item, index) =>{
 						return(
 							<p className="gridValue"  key={item}>{ (index ? ', ' : '') + item }</p>
 						)
 					})
-				} */}
+				} 
             </div>
 		</div>
 
@@ -60,7 +60,6 @@ const DetailsFooter = (props) => {
             <div className='gridRow'>
 				{
 					props.types?.map((item,index) => {
-						// console.log(item?.type?.name?.toUpperCase());
 						return <Box content={item?.type?.name} backgroundColor={Pokemon_Color_Codes[item?.type?.name?.toUpperCase()]} key={index}/>
 					})
 				}
