@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchPokemonListApiCall } from './redux/actionContainer/actionCreators/pokemonListActionCreator';
 import { fetchGenderDataApiCall } from './redux/actionContainer/actionCreators/genderDataActionCreator';
+import { fetchTypesDataApiCall } from './redux/actionContainer/actionCreators/typesDataActionCreator';
 import HomeScreen from './Screens/HomeScreen';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
   useEffect( () => {
     dispatch(fetchPokemonListApiCall());
     dispatch(fetchGenderDataApiCall());
+    dispatch(fetchTypesDataApiCall())
   }, [])
 
   return (

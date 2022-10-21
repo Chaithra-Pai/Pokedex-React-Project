@@ -16,6 +16,7 @@ import {
   clearPokemonDetails
 } from '../../redux/actionContainer/actionCreators/pokemonDetailsActionCreators'
 import { getGenderDataObject } from '../../redux/selector/genderDataSelector'
+import { getTypesDataObject } from '../../redux/selector/typesDataSelector'
 import { FormatPokemonDetails } from '../../utilities/formatData'
 
 
@@ -23,7 +24,10 @@ const PokemonDetails = ({ handleClose, id }) => {
   const dispatch = useDispatch();
   const { pokemonDetailsResponse, pokemonDescription } =useSelector(getPokemonDetailsObject)
   const { genderData } = useSelector(getGenderDataObject);
+  const { damageData } = useSelector(getTypesDataObject);
+
   const [pokemonDetails,setPokemonDetails] = useState([])
+  // console.log(damageData);
 
   useEffect(() => {
     dispatch(fetchPokemonDetailsApiCall(id))
@@ -42,7 +46,9 @@ const PokemonDetails = ({ handleClose, id }) => {
   const abilities = pokemonDetails?.abilities;
   const types = pokemonDetails?.types;
   const url = pokemonDetails?.sprites?.other?.dream_world?.front_default || '';
-  const { genderDataArray } = FormatPokemonDetails(genderData, pokemonDetails?.name)
+  const { genderDataArray, weakness } = FormatPokemonDetails(pokemonDetails?.name, pokemonDetails?.types, genderData, damageData)
+
+  // console.log(weakness);
 
   return (
     <div className='pokemonDetailsContainer'>
@@ -54,7 +60,7 @@ const PokemonDetails = ({ handleClose, id }) => {
                 <DetailsDescription pokemonDescription={pokemonDescription} id={id}/>
             </div>
         </div> 
-        <DetailsFooter height={height} weight={weight} egg_groups={egg_groups} abilities={abilities} types={types} genderDataArray={genderDataArray}/>
+        <DetailsFooter height={height} weight={weight} egg_groups={egg_groups} abilities={abilities} types={types} genderDataArray={genderDataArray} weakness={weakness}/>
 
     </div>
   )

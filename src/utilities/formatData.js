@@ -1,11 +1,18 @@
 import { GenderList } from "../constants/constants";
 
-export const FormatPokemonDetails = (genderMasterData, pokemonName) => {
+export const FormatPokemonDetails = (pokemonName, types, genderData, damageData) => {
+	
     const genderDataArray = GenderList.reduce((finalGenderArray, current) => {
-		if (genderMasterData[current]?.includes(pokemonName)) {
+		if (genderData[current]?.includes(pokemonName)) {
 			finalGenderArray = [...finalGenderArray, current];
 		}
 		return finalGenderArray;
 	}, []);
-    return { genderDataArray }
+
+	const weakness = types?.reduce((finalWeaknessArray, current) => {
+		finalWeaknessArray = [...new Set([...finalWeaknessArray, ...damageData[current?.type?.name]])];
+		return finalWeaknessArray;
+	}, []);
+
+    return { genderDataArray, weakness }
 }

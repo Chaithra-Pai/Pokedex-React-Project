@@ -69,14 +69,13 @@ const DetailsFooter = (props) => {
         <div className='individualGrid' style={{ gridColumnEnd: 'span 2' }}>
 			<strong className="gridTitle">{ConstantText.Weak_Against}</strong>
             <div className='gridRow'>
-			    <Box content='Flying' style={style}/>
-			    <Box content='Bug' style={style}/>
-			    <Box content='Ice' style={style}/>
-			    <Box content='GROUND' style={style}/>
-			    <Box content='PSYCHIC' style={style}/>
-			    <Box content='PSYCHIC' style={style}/>
-			    <Box content='PSYCHIC' style={style}/>
-
+				{
+					props.weakness?.map((item, index) =>{
+						return(
+							<Box content={item} backgroundColor={Pokemon_Color_Codes[item?.toUpperCase()]} key={index}/>
+						)
+					})
+				} 
             </div>		
 		</div>
     </div>
