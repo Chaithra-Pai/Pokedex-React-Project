@@ -41,7 +41,7 @@
     }
 
     .inputBar{
-        width: 50vw;
+        width: 35vw;
         height: 55px;    
     }
     
@@ -50,5 +50,8 @@
         height: 55px;
     }
 
+    .search{
+        width: 20vw;
+    }
     
 }

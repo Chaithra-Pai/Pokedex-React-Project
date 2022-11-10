@@ -1,0 +1,69 @@
+.filterMobileContainerHeading {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 6%;
+	width: 90%;
+	overflow: auto;
+}
+
+.filterMobileGridContainer{
+    display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	padding: 10%;
+	margin: 10px;
+	flex-grow: 1;
+    font-family: 'Roboto';
+}
+
+.filterMobileButtonsContainer{
+    display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 80%;
+	padding: 5%;
+	position: fixed;
+	bottom: 30px;
+	border-top: 1px solid rgba(46, 49, 86, 0.15);
+	background-color: rgb(255, 255, 255);
+	border-radius: 8px;
+}
+
+.filterButton{
+    width: 132px;
+	height: 37px;
+	border: 1px solid #2e3156;
+	border-radius: 8px;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 16px;
+	text-align: center;
+    color: #2E3156;
+    background-color: #FFFFFF;
+}
+
+.apply{
+    background-color: #2E3156;
+    color: #FFFFFF;
+}
+
+h2{
+    font-family: 'Roboto';
+    font-size: 25px;
+    font-weight: 800;
+    color: #2E3156;
+}
+
+hr{
+    color: grey;
+    width: 90%;
+    border: 0.1px solid #2E315626;
+}
+
+button{
+    background: none;
+}

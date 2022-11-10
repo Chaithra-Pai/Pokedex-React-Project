@@ -5,6 +5,7 @@
     width: 100%;
     row-gap: 25%;
     margin-top: 7%;
+    margin-bottom: 7%;
     font-family: 'Roboto';
     font-size: 18px;
     color: #2e3156;
@@ -31,6 +32,17 @@
 @media only screen and (max-width: 768px) {
 	.bottomContainer {
         grid-template-columns: repeat(2,1fr);
-        row-gap: 12%;
+        row-gap: 7%;
+        margin-bottom: 60px;
 	}
+}
+
+@media only screen and (max-width: 768px){
+	.types{
+        width: 174px;
+    }
+    .weak{
+        width: 355px;
+        height: 72px;
+    }
 }

@@ -4,6 +4,11 @@
 
 .homeScreen{
     background-color: #e1eced;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: auto;
+    padding-bottom: 3%;
 }
   
 .searchFilter{

@@ -19,7 +19,7 @@ function ChildModal( { id, description }) {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: '550px',
+        width: '60%',
         height:'400px',
         bgcolor: '#2e3156',
         padding:'20px',
@@ -28,6 +28,7 @@ function ChildModal( { id, description }) {
         overflowY: 'scroll',
         fontFamily: 'Roboto'
     };
+    
 
     return (
         <div>

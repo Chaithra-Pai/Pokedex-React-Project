@@ -57,7 +57,7 @@ const DetailsFooter = (props) => {
 		</div>
         <div className='individualGrid'>
 			<strong className="gridTitle">{ConstantText.Types}</strong>
-            <div className='gridRow'>
+            <div className='gridRow types'>
 				{
 					props.types?.map((item,index) => {
 						return <Box content={item?.type?.name} backgroundColor={Pokemon_Color_Codes[item?.type?.name?.toUpperCase()]} key={index}/>
@@ -68,7 +68,7 @@ const DetailsFooter = (props) => {
 
         <div className='individualGrid' style={{ gridColumnEnd: 'span 2' }}>
 			<strong className="gridTitle">{ConstantText.Weak_Against}</strong>
-            <div className='gridRow'>
+            <div className='gridRow weak'>
 				{
 					props.weakness?.map((item, index) =>{
 						return(

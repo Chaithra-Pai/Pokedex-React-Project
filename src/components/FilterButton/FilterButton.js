@@ -1,10 +1,10 @@
 import React from 'react'
 import { ReactComponent as FilterIcon  } from '../../assets/icons/filter_icon.svg'
-import './filterButton.css'
+import './css/filterButton.css'
 
-const FilterButton = () => {
+const FilterButton = ( {handleModal} ) => {
   return (
-    <button type="button" className='filterButtonMobile'>
+    <button type="button" className='filterButtonMobile' onClick={handleModal}>
       <FilterIcon />
     </button>  
   )

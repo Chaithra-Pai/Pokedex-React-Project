@@ -1,0 +1,59 @@
+.filterMobileRow{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 295px;
+    border-radius: 8px;
+    min-height: 50px;
+    /* height: 100%; */
+    border: 1px solid rgb(46, 49, 86);
+    justify-content: flex-start;
+    padding: 5px;
+    overflow-y: scroll;
+    margin-top: 15px;
+}
+
+.filterTypeRow{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    min-height: 49px;
+    height: auto;
+}
+
+.filterName{
+    color: rgb(46, 49, 86);
+    place-self: center;
+    text-align: center;
+    flex: 0.1;
+}
+
+.verticalLine{
+    border-right: 0.1px solid  rgb(46, 49, 86);
+    height: 20px;
+}
+
+.filterMobileGridContent{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4%;
+    margin: 5%;
+}
+
+.filterCheckboxRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.filterCheckbox{
+    margin: 8px;
+    background-color: #2E3156;
+}
+
+.filterMobileLabel{
+    font-size: 14px;
+    color:#2E3156;
+}
+
