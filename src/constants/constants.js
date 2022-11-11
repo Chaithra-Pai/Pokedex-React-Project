@@ -42,8 +42,8 @@ export const Pokemon_Color_Codes = {
 export const ConstantText = {
 	Heading: 'Pokédex',
 	SubHeading: 'Search for any pokemon that exists on the planet',
-	SearchPlaceHolder: 'Name or Number',
-	FilterName1: 'Search by',
+	SearchPlaceHolder: 'Enter Name or Number',
+	SearchBoxName: 'Search by',
 	Apply: 'Apply',
 	Reset: 'Reset',
 	Height: 'Height',

@@ -1,7 +1,8 @@
 import { 
     FETCH_POKEMON_LIST, 
     FETCH_POKEMON_LIST_SUCCESS, 
-    FETCH_POKEMON_LIST_FAILURE
+    FETCH_POKEMON_LIST_FAILURE,
+    SEARCH_POKEMON_LIST
 } from '../actionTypes/pokemonListActions';
 import axios from 'axios';
 import { Services } from '../../../constants/constants'
@@ -26,12 +27,22 @@ export const fetchPokemonListFailure = (error) => {
     }
 }
 
+export const searchPokemonList = (value) => {
+	return {
+		type: SEARCH_POKEMON_LIST,
+		payload: value,
+	};
+};
+
 export const fetchPokemonListApiCall = () => {
     return (dispatch) => {
         dispatch(fetchPokemons());
         axios
             .get(Services.pokemonListAPI)
-            .then ((response) => dispatch(fetchPokemonListSuccess(response.data)))
+            .then ((response) => {
+                dispatch(fetchPokemonListSuccess(response.data))
+                // console.log(response.data);
+            })
             .catch((error) => dispatch(fetchPokemonListFailure(error)))
     }
 }

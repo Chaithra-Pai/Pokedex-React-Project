@@ -9,6 +9,7 @@ export const filteredPokemonList = ( pokemonData, filterList, typesData, genderD
     } else {
         let filteredGenderData = filterGender( tempData, filterList, genderData);
         let fullList = filterType(filteredGenderData, filterList, typesData);
+        console.log(fullList);
         return fullList;
     }
 }
