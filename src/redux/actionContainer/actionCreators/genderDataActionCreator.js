@@ -5,6 +5,7 @@ import {
 } from '../actionTypes/genderDataActions';
 import axios from 'axios';
 import { Services } from '../../../constants/constants';
+import { initialFilter } from './filterActionCreator';
 
 export const fetchGenderMasterData = () => {
     return {
@@ -38,6 +39,8 @@ export const fetchGenderDataApiCall = () => {
 					genderTypes = [...genderTypes, item.name];
 					apiPromise = [...apiPromise, axios.get(item.url)];
 				});
+
+                dispatch(initialFilter('Gender', genderTypes));
 
                 Promise.all([...apiPromise])
                         .then((promiseResponse) =>{

@@ -5,6 +5,7 @@ import {
 } from '../actionTypes/typesDataActions';
 import axios from 'axios';
 import { Services } from '../../../constants/constants';
+import { initialFilter } from './filterActionCreator';
 
 export const fetchTypesData = () => {
     return {
@@ -40,6 +41,9 @@ export const fetchTypesDataApiCall = () => {
                     typesData = [...typesData, item.name]
                     apiPromise = [...apiPromise,axios.get(item.url)]
                 });
+
+                dispatch(initialFilter('Type', typesData));
+
                 Promise.all([...apiPromise])
                     .then((promiseResponse) => {
                         let data = promiseResponse.map((item) => item.data);
@@ -49,6 +53,7 @@ export const fetchTypesDataApiCall = () => {
                         dispatch(fetchTypesDataFailure(error))
                     })
 			})
+            
 			.catch((error) => {
 				dispatch(fetchTypesDataFailure(error.message));
 			});

@@ -1,13 +1,29 @@
 import { Box } from '@mui/system'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { ReactComponent as CloseIcon  } from '../../assets/icons/close_icon.svg'
 import './css/filterMobileContainer.css'
 import FilterGrid from './FilterGrid'
-import colourOptions from '../../sampleData'
+import { getFilterObject } from '../../redux/selector/filterSelector'
+import { stat } from '../../constants/constants'
+import {
+	resetFilter,
+	updateFilter,
+} from '../../redux/actionContainer/actionCreators/filterActionCreator'
 
 const FilterMobileContainer = ({ handleClose }) => {
 
-    const materialBoxStyle = {
+	const dispatch = useDispatch();
+	const [filterState, setFilterState] = useState({});
+	const { filterList, completeList } = useSelector(getFilterObject);
+
+	const filterArray = [
+		['Type', [...completeList?.Type]],
+		['Gender', [...completeList?.Gender]],
+		['Stat', [...stat]],
+	];
+
+    const style = {
 		display: 'flex',
 		flexDirection: 'column',
 		bgcolor: '#FFFFFF',
@@ -21,8 +37,12 @@ const FilterMobileContainer = ({ handleClose }) => {
 		overflowX: 'hidden',
 	};
 
-  return (
-    <Box sx={materialBoxStyle}>
+	useEffect(() => {
+		setFilterState(filterList);
+	}, [filterList]);
+
+  	return (
+    <Box sx={style}>
         <div className="filterMobileContainerHeading">
 			<h2>Filters</h2>
 			<button onClick={handleClose}>
@@ -31,17 +51,33 @@ const FilterMobileContainer = ({ handleClose }) => {
 		</div>
         <hr />
         <div className="filterMobileGridContainer">
-            <FilterGrid options={colourOptions} label='Type'/> 
-            <FilterGrid options={colourOptions} label='Gender'/>  
-            <FilterGrid options={colourOptions} label='Stat'/>  
+			{
+				filterArray.map((item,index) => {
+					return (
+						<div style={{ padding: '10px', alignSelf: 'center' }} key={item[0]}>
+							<FilterGrid
+								label={item[0]}
+								options={item[1]}
+								filterState={filterState}
+								setFilterState={setFilterState}
+							/>
+						</div>
+					)
+				})
+			}
         </div>
 
         <div className="filterMobileButtonsContainer">
-				<button className="filterButton">RESET</button>
-				<button	className="filterButton apply">APPLY</button>
+				<button className="filterButton" onClick={() => { dispatch(resetFilter()) }}>
+					RESET
+				</button>
+				
+				<button	className="filterButton apply" onClick={() => { dispatch(updateFilter(filterState)); handleClose(); }}>
+					APPLY
+				</button>
 			</div>
     </Box>
-  )
+  	)
 }
 
 export default FilterMobileContainer

@@ -57,3 +57,11 @@ export const ConstantText = {
 };
 
 export const GenderList = ['female', 'male', 'genderless'];
+
+export const stat = [];
+
+export const initialFilterLabel = {
+	Type: `Normal and 15 Others`,
+	Gender: `Male and 2 Others`,
+	Stat: `Normal and 15 Others`,
+};
