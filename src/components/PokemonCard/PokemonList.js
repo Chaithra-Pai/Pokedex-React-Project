@@ -18,13 +18,13 @@ const PokemonList = () => {
     const { genderData } = useSelector(getGenderDataObject);
 
     const [displayData, setDisplayData] = useState(pokemonListResult);
-    // console.log(genderData);
+    // console.log(filterList);
 
 
     useEffect(()=>{
         setDisplayData(pokemonListResult)
-        // setDisplayData(filteredPokemonList(pokemonListResult,filterList,typesData,genderData))
-    },[pokemonListResponse])
+         setDisplayData(filteredPokemonList(pokemonListResult,filterList,typesData,genderData))
+    },[pokemonListResponse,filterList,typesData,genderData])
 
     return (
         <div className='pokemonList'>

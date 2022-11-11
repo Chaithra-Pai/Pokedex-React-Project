@@ -1,9 +1,10 @@
 export const filteredPokemonList = ( pokemonData, filterList, typesData, genderData ) => {
     let tempData = pokemonData ? [...pokemonData] : []
+
     if(
         filterList['Type']?.length === Object.keys(typesData)?.length &&
         filterList['Gender']?.length === Object.keys(genderData)?.length
-    ){
+    ){        
         return tempData
     } else {
         let filteredGenderData = filterGender( tempData, filterList, genderData);
